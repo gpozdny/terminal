@@ -1,0 +1,113 @@
+// default
+
+// Import Bulma's core
+@import "~bulma/sass/utilities/_all";
+
+// Set your colors
+$primary: #4493AD;
+$primary-light: #D0E1E9;
+$primary-dark: #2D3393;
+$primary-invert: findColorInvert($primary);
+
+$secondary: #88BBCF;
+$secondary-light: #9ACBD8;
+
+
+$twitter: #4099FF;
+$twitter-invert: findColorInvert($twitter);
+
+$title: D0E1E9;
+// Lists and maps
+$custom-colors: null !default;
+$custom-shades: null !default;
+
+// Setup $colors to use as bulma classes (e.g. 'is-twitter')
+$colors: mergeColorMaps(("white": ($white,
+      $black,
+    ),
+    "black": ($black,
+      $white,
+    ),
+    "light": ($light,
+      $light-invert,
+    ),
+    "dark": ($dark,
+      $dark-invert,
+    ),
+    "primary": ($primary,
+      $primary-invert,
+      $primary-light,
+      $primary-dark,
+    ),
+    "link": ($link,
+      $link-invert,
+      $link-light,
+      $link-dark,
+    ),
+    "info": ($info,
+      $info-invert,
+      $info-light,
+      $info-dark,
+    ),
+    "success": ($success,
+      $success-invert,
+      $success-light,
+      $success-dark,
+    ),
+    "warning": ($warning,
+      $warning-invert,
+      $warning-light,
+      $warning-dark,
+    ),
+    "danger": ($danger,
+      $danger-invert,
+      $danger-light,
+      $danger-dark,
+    ),
+  ),
+  $custom-colors);
+
+// Links
+$link: $primary;
+$link-invert: $primary-invert;
+$link-focus-border: $primary;
+
+// Import Bulma and Buefy styles
+@import "~bulma";
+// @import "~buefy/src/scss/buefy";
+
+
+// default
+
+html,
+body {
+  width: 100%;
+  min-height: 100vh;
+  max-height: 100vh;
+}
+
+#nuxt,
+#__layout>div {
+  min-height: 100vh;
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.main-title {
+  font-size: 2rem;
+  color: $title;
+}
+
+.main-subtitle {
+  font-size: 1.8rem;
+  color: $title;
+  font-weight: bold;
+}
+
+footer.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  max-height: 30vh;
+  background-color: $secondary-light;
+}
